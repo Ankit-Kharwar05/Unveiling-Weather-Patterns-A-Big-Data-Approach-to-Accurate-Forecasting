@@ -48,6 +48,7 @@ In this architecture , we have followed following steps:
 
 
  **Preprocessing**
+ 
  First of All we have to understand the raw data format that we are getting from API. 
  As we have mentioned above the format in which we are getting the data is **Complex Json Format**. Now to transform it into **simple json format** we have used *PySpark*.
  **PySpark** provide us parallel processing and ability to handle big size data.
@@ -61,6 +62,7 @@ In this architecture , we have followed following steps:
    8. We have column _id having value 2020121012_mumbai which is unique in all data we can get as it represent timestamp for that city.
 
  **MongoDB**
+ 
  We have used PySpark-mongoDB connector to connect mongoDB with PySpark. As it is very memory and time efficient to write in mongodb using pyspark connector in comparison to use pymongo connector.
  First we have to make database in mongodb with name weather and in which collection with name city using mongosh
  We followed mongoDB documents (https://www.mongodb.com/docs/spark-connector/current/) to make connection with spark
@@ -87,6 +89,7 @@ Achieving an RMSE of 0.6172 demonstrates the model's ability to effectively capt
 
 
 **Airflow**
+
 We have used airflow for continually updating weather data for every city in database and to retrain model with new data we get every day.
 for that we have made two dags 
     1. newdata_dag : it schedule and pipeline the preprocessing part and mongodb part also.
