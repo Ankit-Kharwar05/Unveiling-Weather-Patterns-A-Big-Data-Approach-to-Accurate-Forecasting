@@ -93,7 +93,7 @@ Achieving an RMSE of 0.6172 demonstrates the model's ability to effectively capt
 We have used airflow for continually updating weather data for every city in database and to retrain model with new data we get every day.
 for that we have made two dags :-
 1. newdata_dag : it schedule and pipeline the preprocessing part and mongodb part also.
-2. 2. remodel_dag : it schedule and pipeline the retrainging part and saving train model in pickle format and overright previous model.
+2. remodel_dag : it schedule and pipeline the retrainging part and saving train model in pickle format and overright previous model.
 
 **References**
 
